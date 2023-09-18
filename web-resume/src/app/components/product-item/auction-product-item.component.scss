@@ -1,13 +1,19 @@
 .thumbnail {
     padding: 0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 
     img {
         width: 100%;
     }
 
     .caption {
-        height: 130px;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
 
         h4 {
             white-space: nowrap;
@@ -18,11 +24,4 @@
         padding: 9px;
         color: #333;
     }
-
-    .ratings {
-        color: #d17581;
-        padding-left: 10px;
-        padding-right: 10px;
-       }
 }
-

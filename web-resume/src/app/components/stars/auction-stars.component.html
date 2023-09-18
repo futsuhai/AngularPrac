@@ -1,6 +1,5 @@
 <p>
-    <span *ngFor="let star of stars" class="starrating glyphicon glyphicon-star" 
-    [class.glyphicon-star-empty]="star">
-    </span>
-    <span>{{ rating }} stars</span>
+    <img *ngFor="let star of stars" 
+    [src]="star ? './assets/star-empty.svg' : './assets/star-fill.svg' ">
+    <span style="font-family: none; font-size: 18px; padding-left: 4px;">{{ rating }} stars</span>
 </p>

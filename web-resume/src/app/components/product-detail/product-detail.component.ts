@@ -5,7 +5,8 @@ import { Product, ProductService, Review } from 'src/app/services/product-servic
 
 @Component({
     selector: 'auction-product-page',
-    templateUrl: 'product-detail.component.html'
+    templateUrl: 'product-detail.component.html',
+    styleUrls: ['product-detail.component.scss']
 })
 export default class ProductDetailComponent {
     product: Product | undefined;
