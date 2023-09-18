@@ -1,0 +1,28 @@
+.thumbnail {
+    padding: 0;
+
+    img {
+        width: 100%;
+    }
+
+    .caption {
+        height: 130px;
+        overflow: hidden;
+
+        h4 {
+            white-space: nowrap;
+        }
+    }
+
+    .caption-full {
+        padding: 9px;
+        color: #333;
+    }
+
+    .ratings {
+        color: #d17581;
+        padding-left: 10px;
+        padding-right: 10px;
+       }
+}
+

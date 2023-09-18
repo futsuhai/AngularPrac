@@ -1,0 +1,26 @@
+<form name="searchForm" role="form">
+    <div class="form-group">
+      <label for="productTitle">Product title:</label>
+      <input type="text" id="productTitle"
+             placeholder="Title" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="productPrice">Product price:</label>
+      <input id="productPrice"
+             name="productPrice"
+             type="number" min="0" step="any"
+             placeholder="Price" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="prodcutCategory">Product category:</label>
+      <select id="prodcutCategory" class="form-control">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block">Search</button>
+    </div>
+  </form>
