@@ -8,11 +8,12 @@ import CarouselComponent from './components/carousel/auction-carousel.component'
 import FooterComponent from './components/footer/auction-footer.component';
 import NavbarComponent from './components/navbar/auction-navbar.component';
 import SearchComponent from './components/search/auction-search.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import HomeComponent from './components/pages/home/auction-home.component';
 import ProductDetailComponent from './components/product-detail/product-detail.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { FilterPipe } from './pipes/filter-pipe';
 
 
 
@@ -26,10 +27,12 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     NavbarComponent,
     ProductItemComponent,
     SearchComponent,
-    StarsComponent
+    StarsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'product/:productId', component: ProductDetailComponent }
