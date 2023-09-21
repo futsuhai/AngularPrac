@@ -1,5 +1,9 @@
 <p>
-    <img *ngFor="let star of stars" 
-    [src]="star ? './assets/star-empty.svg' : './assets/star-fill.svg' ">
-    <span style="font-family: none; font-size: 18px; padding-left: 4px;">{{ rating }} stars</span>
+    <img *ngFor="let star of stars; let i = index" 
+    [src]="star ? './assets/star-fill.svg' : './assets/star-empty.svg'"
+    (click)="fillStarsWithColor(i)">
+
+    <span *ngIf="rating"
+     style="font-family: none; font-size: 18px; padding-left: 4px;">
+     {{ rating | number: '.0-2' }} stars</span>
 </p>

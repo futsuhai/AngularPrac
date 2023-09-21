@@ -31,6 +31,7 @@ import { FilterPipe } from './pipes/filter-pipe';
     FilterPipe
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
