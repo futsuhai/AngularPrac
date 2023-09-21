@@ -1,26 +1,31 @@
-<form name="searchForm" role="form">
-    <div class="form-group">
-      <label for="productTitle">Product title:</label>
-      <input type="text" id="productTitle"
-             placeholder="Title" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="productPrice">Product price:</label>
-      <input id="productPrice"
-             name="productPrice"
-             type="number" min="0" step="any"
-             placeholder="Price" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="prodcutCategory">Product category:</label>
-      <select id="prodcutCategory" class="form-control">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-    <div class="form-group" style="margin-top: 10px;">
-      <button type="submit" class="btn btn-primary btn-block">Search</button>
-    </div>
-  </form>
+<form [formGroup]="formModel" (ngSubmit)="onSearch()" novalidate name="searchForm" role="form">
+  <div class="form-group" [class.has-error]="formModel.hasError('minlength', 'title')">
+    <label for="productTitle">Product title:</label>
+    <input class="form-control"
+      type="text" id="title"
+      placeholder="Title" formControlName="title" minlength="3">
+    <span class="help-block" [class.hidden]="!formModel.hasError('minlength', 'title')">
+      Type at least 3 characters
+    </span>
+  </div>
+  <div class="form-group" [class.has-error]="formModel.hasError('positivenumber', 'price')">
+    <label for="productPrice">Product price:</label>
+    <input class="form-control"
+      placeholder="Price" id="price"
+      type="number" min="0" step="any" formControlName="price">
+    <span class="help-block" [class.hidden]="!formModel.hasError('positivenumber', 'price')">
+      Price is not a positive number
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="category">Product category:</label>
+    <select id="category" class="form-control" formControlName = "category">
+      <option value="-1">All categories</option>
+      <option *ngFor="let c of categories"
+      [value]="c">{{c}}</option>
+    </select>
+  </div>
+  <div class="form-group" style="margin-top: 10px;">
+    <button type="submit" class="btn btn-primary btn-block">Search</button>
+  </div>
+</form>

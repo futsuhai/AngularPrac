@@ -45,6 +45,10 @@ export class ProductService {
             .map(r => new Review(r.id, r.productId, new Date(r.timestamp),
                 r.user, r.rating, r.comment));
     }
+
+    getAllCategories(): string[] {
+        return ['Books', 'Electronics', 'Hardware'];
+    }
 }
 
 var products = [
